@@ -24,7 +24,7 @@ Start the server:
 ./server containerB@localhost --server_key /your_server_key
 ```
 
-By default, the server key is `/etc/ssh/ssh_host_rsa_key`. 
+By default, the server key is `/etc/ssh/ssh_host_rsa_key` and it will use the port `2232`. 
 Then, connect to the container using the `ssh` server created to interact with it:
 
 ```bash
