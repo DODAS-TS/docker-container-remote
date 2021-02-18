@@ -31,6 +31,6 @@ Then, connect to the container using the `ssh` server created to interact with i
 ssh -p 2232 containerB@localhost
 ```
 
-### References
+### :books: References
 
 * [docker-sshd](https://github.com/tg123/docker-sshd)
