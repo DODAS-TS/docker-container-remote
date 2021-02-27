@@ -1,6 +1,18 @@
 # docker-container-remote
 
-Access a docke container using an ssh server
+Access a docke container using an ssh server.
+
+```
+                     +-------------------------+
++----------+         |                         |         +-------------+
+|          |         |         service         |         |             |
+|   SSH    +---------+ docker-container-remote +---------+ Container X |
+|          |         |                         |         |             |
++-----+----+         +-------------------------+         +------+------+
+      |                                                         ^
+      |                                                         |
+      +---------------------------------------------------------+
+```
 
 ## :rocket: Getting started
 
