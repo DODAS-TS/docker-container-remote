@@ -342,37 +342,37 @@ func main() { //nolint:funlen,cyclop,gocognit
 						panic(err)
 					}
 
-					log.Printf("container exec create")
-					exec, err := cli.ContainerExecCreate(ctx, targetContainer, dockerTypes.ExecConfig{
-						AttachStdin:  true,
-						AttachStdout: true,
-						AttachStderr: true,
-						Detach:       true,
-						Tty:          true,
-						Cmd:          []string{config.Cmd},
-					})
-					if err != nil {
-						logger.Printf("failed to create docker exec: %v", err)
-						sshConn.Close()
+					// log.Printf("container exec create")
+					// exec, err := cli.ContainerExecCreate(ctx, targetContainer, dockerTypes.ExecConfig{
+					// 	AttachStdin:  true,
+					// 	AttachStdout: true,
+					// 	AttachStderr: true,
+					// 	Detach:       true,
+					// 	Tty:          true,
+					// 	Cmd:          []string{config.Cmd},
+					// })
+					// if err != nil {
+					// 	logger.Printf("failed to create docker exec: %v", err)
+					// 	sshConn.Close()
 
-						return
-					}
+					// 	return
+					// }
 
-					log.Printf("container exec start")
-					err = cli.ContainerExecStart(ctx, exec.ID, types.ExecStartCheck{
-						Detach: true,
-						Tty:    true,
-					})
-					if err != nil {
-						panic(err)
-					}
+					// log.Printf("container exec start")
+					// err = cli.ContainerExecStart(ctx, exec.ID, types.ExecStartCheck{
+					// 	Detach: true,
+					// 	Tty:    true,
+					// })
+					// if err != nil {
+					// 	panic(err)
+					// }
 
-					inspectExec, err := cli.ContainerExecInspect(ctx, exec.ID)
-					if err != nil {
-						panic(err)
-					}
+					// inspectExec, err := cli.ContainerExecInspect(ctx, exec.ID)
+					// if err != nil {
+					// 	panic(err)
+					// }
 
-					log.Printf("Exec running: %t -> pid: %d -> exit code: %d", inspectExec.Running, inspectExec.Pid, inspectExec.ExitCode)
+					// log.Printf("Exec running: %t -> pid: %d -> exit code: %d", inspectExec.Running, inspectExec.Pid, inspectExec.ExitCode)
 
 					log.Printf("container attach")
 					hijackConn, err := cli.ContainerAttach(ctx, targetContainer, types.ContainerAttachOptions{
