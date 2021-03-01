@@ -74,6 +74,6 @@ ssh tester.test_docker_ssh@localhost -p 2232
 ### :books: References
 
 * [docker-sshd](https://github.com/tg123/docker-sshd)
-
+* [interactive-container](https://stackoverflow.com/questions/58732588/accept-user-input-os-stdin-to-container-using-golang-docker-sdk-interactive-co)
 
 Con la nuova API non è possibile agganciarsi direttamente al nuovo exec creato, andrebbe implementato direttamente con la chiamata HTTP
